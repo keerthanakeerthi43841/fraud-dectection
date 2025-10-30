@@ -1,0 +1,12 @@
+streamlit
+opencv-python-headless
+numpy
+pandas
+scikit-image
+Pillow
+easyocr
+deepface
+pdf2image
+reportlab
+tensorflow>=2.16.0
+keras>=2.16.0

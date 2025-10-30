@@ -1,0 +1,170 @@
+/* ============================
+   Bright / Modern Interface
+   Banking Fraud Guard - style.css
+   ============================ */
+
+/* Color variables */
+:root {
+  --prussian-blue: #003153;
+  --prussian-blue-2: #05486b;
+  --baby-blue: #CFF2FF; /* soft bright baby blue background */
+  --card-white: #ffffff;
+  --muted: #222222; /* darker body text for contrast */
+  --accent: #0077b6;
+}
+
+/* --- Body / Page --- */
+html, body, .stApp {
+  background: var(--baby-blue);
+  color: var(--muted) !important;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Header --- */
+.main-header {
+  background: linear-gradient(90deg, var(--prussian-blue), var(--prussian-blue-2));
+  color: #fff;
+  padding: 28px 22px;
+  border-radius: 14px;
+  text-align: center;
+  margin-bottom: 18px;
+  box-shadow: 0 8px 20px rgba(177, 202, 225, 0.562);
+}
+
+.main-header h1 {
+  color: #fff;
+  font-size: 44px;
+  margin: 0 0 4px 0;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+/* Subtext below header */
+.main-header div {
+  color: rgba(255,255,255,0.9);
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+/* --- Remove Streamlit link icon from headings --- */
+h1 a, h2 a, h3 a, h4 a {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+.css-1avcm0n, .css-10trblm a, .stMarkdown a {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* --- Tabs / nav look --- */
+.css-1v3fvcr, .stTabs {
+  margin-top: 12px;
+}
+
+/* --- File uploader (dropzone) --- */
+div[data-testid="stFileUploader"] section[data-testid="stFileUploadDropzone"] {
+  background: var(--card-white) !important;
+  color: var(--muted) !important;
+  border: 2px dashed var(--prussian-blue) !important;
+  border-radius: 12px !important;
+  padding: 18px !important;
+  box-shadow: 0 6px 18px rgba(2,20,36,0.06);
+}
+
+/* Uploaded file preview text */
+div[data-testid="stFileUploader"] .css-1d391kg, 
+div[data-testid="stFileUploader"] .css-1p36rbu {
+  color: var(--muted) !important;
+}
+
+/* --- Browse files button --- */
+div[data-testid="stFileUploader"] button {
+  background: var(--prussian-blue) !important;
+  color: #fff !important;
+  border-radius: 10px !important;
+  padding: 8px 14px !important;
+  font-weight: 700 !important;
+  box-shadow: 0 6px 18px rgba(2,20,36,0.12);
+}
+div[data-testid="stFileUploader"] button:hover {
+  background: var(--prussian-blue-2) !important;
+  transform: translateY(-1px);
+}
+
+/* --- Main action buttons --- */
+div.stButton > button, button[kind="primary"] {
+  background: var(--prussian-blue) !important;
+  color: white !important;
+  border-radius: 12px !important;
+  padding: 10px 18px !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  box-shadow: 0 8px 22px rgba(2,20,36,0.12);
+  border: none !important;
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+
+div.stButton > button:hover, button[kind="primary"]:hover {
+  background: var(--accent) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0,119,182,0.12);
+}
+
+/* Disabled buttons */
+div.stButton > button[disabled], 
+div.stButton > button[aria-disabled="true"] {
+  background: #7b9aa8 !important;
+  color: #ffffff !important;
+  opacity: 0.95 !important;
+}
+
+/* Ensure label text inside buttons is white */
+div.stButton > button span, div.stButton > button * {
+  color: white !important;
+}
+
+/* --- Headings / Labels --- */
+h1, h2, h3, h4, label, .stMarkdown, p {
+  color: var(--muted) !important;
+}
+
+/* --- Input fields --- */
+input[type="text"], textarea, .stTextInput>div>input, .stTextArea>div>textarea {
+  background: #fff !important;
+  color: var(--muted) !important;
+  border-radius: 10px !important;
+  padding: 10px !important;
+  border: 1px solid rgba(0,49,83,0.08) !important;
+  box-shadow: 0 6px 18px rgba(2,20,36,0.04) inset;
+}
+
+/* --- Images / Results --- */
+.css-1d391kg, .stImage, .stDataFrame {
+  border-radius: 12px;
+}
+
+/* --- Divider --- */
+hr {
+  border: 0;
+  height: 1px;
+  background: rgba(0,49,83,0.12);
+  margin: 28px 0;
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .main-header h1 { font-size: 26px; }
+  div.stButton > button { width: 100% !important; }
+  div[data-testid="stFileUploader"] section[data-testid="stFileUploadDropzone"] {
+    padding: 14px !important;
+  }
+}
+
+/* --- Accessibility focus --- */
+div.stButton > button:focus, div[data-testid="stFileUploader"] button:focus {
+  outline: 3px solid rgba(0,119,182,0.22) !important;
+  outline-offset: 2px;
+}
